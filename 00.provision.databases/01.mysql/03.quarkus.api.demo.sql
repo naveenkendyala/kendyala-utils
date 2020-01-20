@@ -35,3 +35,11 @@ CREATE TABLE `ToDo` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
 INSERT INTO db_springboot.ToDo values ("1","Yes","Task in Spring DB");
+
+
+#SET MAX CONNECTIONS
+SET GLOBAL max_connections = 512;
+SHOW STATUS LIKE 'max_used_connections';
+SHOW VARIABLES LIKE 'max_connections';
+SHOW STATUS WHERE `variable_name` = 'Threads_connected';
+
