@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    db: mysql
+    type: demo
+  name: mysql-db-service
+spec:
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+    nodePort: 30100
+  selector:
+    db: mysql
+    type: demo
+  type: NodePort
+status:
+  loadBalancer: {}
