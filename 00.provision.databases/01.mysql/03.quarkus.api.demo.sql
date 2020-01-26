@@ -2,6 +2,8 @@
 DROP DATABASE IF EXISTS `db_quarkus_jvm`;
 DROP DATABASE IF EXISTS `db_quarkus_native`;
 DROP DATABASE IF EXISTS `db_springboot`;
+DROP DATABASE IF EXISTS `db_eap`;
+
 
 #CREATE THE DATABASE & TABLES
 CREATE DATABASE `db_quarkus_jvm`;
@@ -35,6 +37,19 @@ CREATE TABLE `ToDo` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
 INSERT INTO db_springboot.ToDo values ("1","Yes","Task in Spring DB");
+
+
+#CREATE THE DATABASE & TABLES
+CREATE DATABASE `db_eap`;
+USE `db_eap`;
+CREATE TABLE `ToDo` (
+  `ID` int(11) NOT NULL,
+  `IS_COMPLETE` varchar(255) DEFAULT NULL,
+  `TASK_NAME` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB;
+INSERT INTO db_eap.ToDo values ("1","Yes","Task in EAP DB");
+
 
 
 #SET MAX CONNECTIONS
