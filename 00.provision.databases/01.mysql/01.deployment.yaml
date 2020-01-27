@@ -27,9 +27,9 @@ spec:
         name: mysql-db
         resources:
           limits:
-            cpu: "1500m"
+            cpu: "1600m"
             memory: 6000Mi
           requests:
-            cpu: "1200m"
+            cpu: "1500m"
             memory: 5000Mi
 status: {}
