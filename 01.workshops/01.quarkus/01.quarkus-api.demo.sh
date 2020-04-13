@@ -1,5 +1,9 @@
 #QUARKUS-DEMO:
 
+#Agenda
+# Bring Everyone Upto Speed on UseCase
+#Developer Life :: IDE, Project and Work 
+
 #Create a simple demo project
 mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final:create -DprojectGroupId=com.demo -DprojectArtifactId=quarkus-api -DclassName="com.demo.ToDoResource" -Dpath="/todos"
 
