@@ -39,27 +39,26 @@ TypedQuery<ToDo> query = em.createQuery("SELECT t FROM ToDo t", ToDo.class);
 return query.getResultList();
 }
 
-#Confifuration Properties
 # Configuration file
 # key = value
-quarkus.datasource.url=jdbc:h2:mem:default
-quarkus.datasource.driver=org.h2.Driver
-quarkus.datasource.username=username-default
-quarkus.datasource.min-size=3
-quarkus.datasource.max-size=13
-quarkus.hibernate-orm.database.generation=drop-and-create
-quarkus.hibernate-orm.log.sql=true
-%dev.quarkus.hibernate-orm.sql-load-script = import-data.sql
-
-# quarkus.datasource.jdbc.url=jdbc:mysql://postgresql-db-route-quarkus-demo.apps-crc.testing:32263/db_local
-# quarkus.datasource.db-kind=mysql
-# quarkus.datasource.jdbc.driver=com.mysql.cj.jdbc.Driver
-# quarkus.datasource.username=root
-# quarkus.datasource.password=demo
-# quarkus.datasource.max-size=8
-# quarkus.datasource.min-size=2
+# quarkus.datasource.url=jdbc:h2:mem:default
+# quarkus.datasource.driver=org.h2.Driver
+# quarkus.datasource.username=username-default
+# quarkus.datasource.min-size=3
+# quarkus.datasource.max-size=13
 # quarkus.hibernate-orm.database.generation=drop-and-create
 # quarkus.hibernate-orm.log.sql=true
+%dev.quarkus.hibernate-orm.sql-load-script = import-data.sql
+
+quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/quarkus_api_db
+quarkus.datasource.db-kind=mysql
+quarkus.datasource.jdbc.driver=com.mysql.cj.jdbc.Driver
+quarkus.datasource.username=root
+quarkus.datasource.password=demo
+quarkus.datasource.max-size=8
+quarkus.datasource.min-size=2
+quarkus.hibernate-orm.database.generation=drop-and-create
+quarkus.hibernate-orm.log.sql=true
 
 
 import-data.sql
