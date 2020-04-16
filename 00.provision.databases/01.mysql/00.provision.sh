@@ -1,3 +1,9 @@
+#Provision in gcp or k8s
 kubectl create ns quarkus-demo
 kubectl config set-context --current --namespace quarkus-demo
-kubectl apply -f /Users/naveenkumarkendyala/00.professional/01.workspaces/2020.git.repos/kendyala-utils/00.provision.databases/01.mysql
+kubectl apply -f 01.gcp
+
+
+#Provision on ocp
+
+

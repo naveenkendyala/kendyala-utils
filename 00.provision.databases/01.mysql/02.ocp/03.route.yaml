@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    template: mysql-ephemeral-template
+    template.openshift.io/template-instance-owner: 1e535693-8ddb-42d0-a0cb-ca1201c23612
+  name: mysql-db-service-route
+  selfLink: /apis/route.openshift.io/v1/namespaces/quarkus-demo/routes/mysql-db-service-route
+spec:
+  host: mysql-db-service-route-quarkus-demo.apps-crc.testing
+  port:
+    targetPort: 3306
+  to:
+    kind: Service
+    name: mysql-db-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: null
