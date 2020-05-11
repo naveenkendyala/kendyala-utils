@@ -6,10 +6,10 @@ oc new-project myproject
 #Install the Streams Operator
 
 #Install the Kafka Cluster with "listener" configuration to external type as "route"
-oc apply -f amq.streams.1.4.1/examples/kafka/00.custom.kafka-persistent.01.yaml
+oc apply -f amq-streams-1.4.1-ocp-install-examples/examples/kafka/00.custom.kafka-persistent.01.yaml
 
 #Create a Topic
-oc apply -f amq.streams.1.4.1/examples/topic/00.custom.kafka.topic.01.yaml
+oc apply -f amq-streams-1.4.1-ocp-install-examples/examples/topic/00.custom.kafka.topic.01.yaml
 
 #Get the routes
 oc get routes my-cluster-kafka-bootstrap -o=jsonpath='{.status.ingress[0].host}{"\n"}'
