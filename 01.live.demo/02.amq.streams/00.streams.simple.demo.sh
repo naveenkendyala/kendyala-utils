@@ -6,10 +6,10 @@ oc new-project myproject
 #Install the Streams Operator
 
 #Install the Kafka Cluster with "listener" configuration to external type as "route"
-oc apply -f 01.kafka-persistent.yaml
+oc apply -f amq.streams.1.4.1/examples/kafka/00.custom.kafka-persistent.01.yaml
 
 #Create a Topic
-oc apply -f 02.topic.yaml
+oc apply -f amq.streams.1.4.1/examples/topic/00.custom.kafka.topic.01.yaml
 
 #Get the routes
 oc get routes my-cluster-kafka-bootstrap -o=jsonpath='{.status.ingress[0].host}{"\n"}'
@@ -17,7 +17,6 @@ oc get routes my-cluster-kafka-bootstrap -o=jsonpath='{.status.ingress[0].host}{
 #Get the ca cert and imnport into trusted certs
 oc extract secret/my-cluster-cluster-ca-cert --keys=ca.crt --to=- > ca.crt
 keytool -import -trustcacerts -alias root -file ca.crt -keystore truststore.jks -storepass password -noprompt
-
 
 #Send a Message to Topic
 #***** CHANGE THE BROKER LIST *****
