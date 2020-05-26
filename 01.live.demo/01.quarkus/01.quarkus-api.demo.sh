@@ -7,6 +7,16 @@
 #Create a simple demo project
 mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final:create -DprojectGroupId=com.demo -DprojectArtifactId=quarkus-api -DclassName="com.demo.ToDoResource" -Dpath="/todos"
 
+#Create using the Red Hat's Build of the Quarkus
+mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final-redhat-00001:create \
+    -DprojectGroupId=org.demo \
+    -DprojectArtifactId=quarkus-api \
+    -DplatformGroupId=com.demo.ToDoResource \
+    -DplatformVersion=1.3.2.Final-redhat-00001 \
+    -DclassName="com.demo.ToDoResource" \
+    -Dpath="/todos"
+
+
 #Start the Application in a DEV Mode
 #Remove unwanted Files
 
