@@ -18,14 +18,17 @@ mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final-redhat-00001:create \
 
 
 #Start the Application in a DEV Mode
-#Remove unwanted Files
+#Remove Files under the Test folder
 
 #Modify Greeting
-Show                [ Hot-Reload Functionality, Startup Time ]
+Show                [Hot-Reload Functionality, Startup Time]
 Highlight           [Developer Joy]
 
 #List Extensions
+mvn quarkus:list-Extensions
+
 #Add Extensions
+mvn quarkus:add-extensions -Dextension="jdbc"
 
 ToDo Entity:
 @Id
