@@ -4,6 +4,9 @@
 # Bring Everyone Upto Speed on UseCase
 #Developer Life :: IDE, Project and Work 
 
+# Docker :: Create a mysql instance
+docker run --name local-mysql -e MYSQL_ROOT_PASSWORD=demo -e MYSQL_DATABASE=db_mysql_local -p 3306:3306 -d mysql:8.0.17
+
 #Create a simple demo project
 mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final:create -DprojectGroupId=com.demo -DprojectArtifactId=quarkus-api -DclassName="com.demo.ToDoResource" -Dpath="/todos"
 
@@ -64,7 +67,7 @@ return query.getResultList();
 # quarkus.hibernate-orm.log.sql=true
 %dev.quarkus.hibernate-orm.sql-load-script = import-data.sql
 
-quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/quarkus_api_db
+quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/db_mysql_local
 quarkus.datasource.db-kind=mysql
 quarkus.datasource.jdbc.driver=com.mysql.cj.jdbc.Driver
 quarkus.datasource.username=root
