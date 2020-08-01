@@ -8,11 +8,12 @@
 mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final:create -DprojectGroupId=com.demo -DprojectArtifactId=quarkus-api -DclassName="com.demo.ToDoResource" -Dpath="/todos"
 
 #Create using the Red Hat's Build of the Quarkus
-mvn io.quarkus:quarkus-maven-plugin:1.3.2.Final-redhat-00001:create \
-    -DprojectGroupId=org.demo \
+mvn io.quarkus:quarkus-maven-plugin:1.3.4.Final-redhat-00004:create \
+    -DprojectGroupId=com.demo \
     -DprojectArtifactId=quarkus-api \
-    -DplatformGroupId=com.demo.ToDoResource \
-    -DplatformVersion=1.3.2.Final-redhat-00001 \
+    -DplatformGroupId=com.redhat.quarkus \
+    -DplatformArtifactId=quarkus-universe-bom \
+    -DplatformVersion=1.3.4.Final-redhat-00004 \
     -DclassName="com.demo.ToDoResource" \
     -Dpath="/todos"
 
